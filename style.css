@@ -1,0 +1,15 @@
+*{
+  font-size: 25px;
+  font-weight:lighter;
+}
+nav{
+  font-weight: bold;
+}
+.bev,.bev2{
+  margin: 5px;
+  margin-top: 15px;
+}
+
+#addSize{
+  width: 100%;
+}
