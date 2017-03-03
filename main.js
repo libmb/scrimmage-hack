@@ -6,7 +6,6 @@ $(document).ready(function() {
   $('#foodButton').click(function(){
     $('.food').text("")
     getRandomFood()
-
   })
   $('#personButton').click(function(){
     $('.person').text("")
@@ -22,8 +21,6 @@ function getRandomBev() {
   .then(function(data){
         var name = data[0].name
         var tagline= data[0].tagline
-        console.log(name)
-        console.log(tagline)
         updatePageOne(name, tagline)
   })
 }
@@ -41,7 +38,6 @@ function getRandomFood() {
       while (isImg === false) {
         randomImgUrl = data.data.children[((Math.floor(Math.random()*24))+1)].data.url
         var subImgUrl = randomImgUrl.substring(randomImgUrl.length-3, randomImgUrl.length)
-        console.log(subImgUrl)
         if (subImgUrl === 'png' || subImgUrl === 'jpg'){
           isImg === true
           break;
@@ -56,7 +52,6 @@ function getRandomFood() {
 
 // get a person to talk to!
 function getRandomPerson() {
-  var alpha = "A"
   var randomLetter=((Math.floor(Math.random()*26))+65)
   var alpha= String.fromCharCode(randomLetter)
   updatePageThree(alpha)
@@ -78,6 +73,6 @@ function updatePageTwo(styledImg) {
 
 //update page with friend
 function updatePageThree(alpha) {
-  $('.person').append("Let's call a someone whose name starts with " + alpha)
+  $('.person').append("Let's call someone whose name starts with " + alpha)
   console.log(alpha);
   }
