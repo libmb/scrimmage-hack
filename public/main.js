@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('#bevButton').click(function(){
     $('.bev').text("")
+    $('.bev2').text("")
     getRandomBev()
   })
   $('#foodButton').click(function(){
@@ -39,7 +40,7 @@ function getRandomFood() {
         randomImgUrl = data.data.children[((Math.floor(Math.random()*24))+1)].data.url
         var subImgUrl = randomImgUrl.substring(randomImgUrl.length-3, randomImgUrl.length)
         if (subImgUrl === 'png' || subImgUrl === 'jpg'){
-          isImg === true
+          isImg = true
           break;
         } else {
           console.log("not img: "+subImgUrl)
@@ -63,13 +64,13 @@ function updatePageOne(name, tagline) {
   $('.bev').append("What are we drinking?: " + name)
   $('.bev2').append("How does it taste?: " +tagline)
   console.log(name, tagline);
-  }
+}
 
 //update page with food
 function updatePageTwo(styledImg) {
   $('.food').append(styledImg)
   console.log(styledImg);
-  }
+}
 
 //update page with friend
 function updatePageThree(alpha) {
